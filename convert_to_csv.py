@@ -28,6 +28,7 @@ def convert_docx_to_pdf():
     path = browseFiles()
     files = os.listdir(path)
     convert(path, output_path=".")
+    open_pdf_files(".")
 
 def Convert():
     path = browseFiles()
@@ -49,6 +50,10 @@ def Convert():
 def open_csv_files(directory):
     csv_files = [f for f in os.listdir(directory) if f.endswith('.csv')]
     for csv_file in csv_files:
+        os.startfile(os.path.join(directory, csv_file))
+def open_pdf_files(directory):
+    pdf_files = [f for f in os.listdir(directory) if f.endswith('.pdf')]
+    for csv_file in pdf_files:
         os.startfile(os.path.join(directory, csv_file))
 
 root = Tk()
